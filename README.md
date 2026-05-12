@@ -1,2 +1,2 @@
 # robot_line_follower_fsm
-Implementação de máquinas de estados síncronas para controle de trajetória de um robô móvel seguidor de linha.
+Implementação de máquinas de estados síncronas para controle de trajetória de um robô móvel seguidor de linha. O sistema utiliza dois sensores binários para detecção da faixa e controle independente dos motores esquerdo e direito, permitindo movimentos em linha reta, curvas e busca da trajetória perdida. 
