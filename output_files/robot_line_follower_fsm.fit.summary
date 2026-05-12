@@ -1,4 +1,4 @@
-Fitter Status : Successful - Tue May 12 02:19:36 2026
+Fitter Status : Successful - Tue May 12 03:28:28 2026
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : robot_line_follower_fsm
 Top-level Entity Name : block_diagram_V1
@@ -9,9 +9,9 @@ Total logic elements : 13 / 49,760 ( < 1 % )
     Total combinational functions : 13 / 49,760 ( < 1 % )
     Dedicated logic registers : 4 / 49,760 ( < 1 % )
 Total registers : 4
-Total pins : 11 / 360 ( 3 % )
+Total pins : 35 / 360 ( 10 % )
 Total virtual pins : 0
-Total memory bits : 0 / 1,677,312 ( 0 % )
+Total memory bits : 96 / 1,677,312 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )
 UFM blocks : 0 / 1 ( 0 % )
