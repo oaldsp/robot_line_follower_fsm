@@ -1,5 +1,5 @@
 Analysis & Synthesis report for robot_line_follower_fsm
-Tue May 12 02:11:21 2026
+Tue May 12 02:19:13 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,10 +14,12 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |block_diagram_V1|robot_line_follower_fsmV1:inst|fstate
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: clock_divider:inst5|lpm_counter:LPM_COUNTER_component
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,7 +45,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 12 02:11:21 2026       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 12 02:19:13 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; robot_line_follower_fsm                     ;
 ; Top-level Entity Name              ; block_diagram_V1                            ;
@@ -52,7 +54,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 12                                          ;
 ;     Dedicated logic registers      ; 4                                           ;
 ; Total registers                    ; 4                                           ;
-; Total pins                         ; 10                                          ;
+; Total pins                         ; 11                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -172,6 +174,18 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
 ; block_diagram_V1.bdf             ; yes             ; User Block Diagram/Schematic File  ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/block_diagram_V1.bdf          ;         ;
 ; robot_line_follower_fsmV1.vhd    ; yes             ; User VHDL File                     ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/robot_line_follower_fsmV1.vhd ;         ;
+; clock_divider.vhd                ; yes             ; Auto-Found Wizard-Generated File   ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/clock_divider.vhd             ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.tdf                                  ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_constant.inc                                 ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                   ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                  ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/cmpconst.inc                                     ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_compare.inc                                  ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.inc                                  ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/dffeea.inc                                       ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                          ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                   ;         ;
+; db/cntr_54h.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/db/cntr_54h.tdf               ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -196,14 +210,14 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 4           ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 10          ;
+; I/O pins                                    ; 11          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
 ; Maximum fan-out                             ; 8           ;
-; Total fan-out                               ; 61          ;
-; Average fan-out                             ; 1.69        ;
+; Total fan-out                               ; 62          ;
+; Average fan-out                             ; 1.63        ;
 +---------------------------------------------+-------------+
 
 
@@ -212,7 +226,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                              ; Entity Name               ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+---------------------------+--------------+
-; |block_diagram_V1                   ; 12 (0)              ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |block_diagram_V1                                ; block_diagram_V1          ; work         ;
+; |block_diagram_V1                   ; 12 (0)              ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 11   ; 0            ; 0          ; |block_diagram_V1                                ; block_diagram_V1          ; work         ;
 ;    |robot_line_follower_fsmV1:inst| ; 12 (12)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |block_diagram_V1|robot_line_follower_fsmV1:inst ; robot_line_follower_fsmV1 ; work         ;
 +-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -231,6 +245,16 @@ Encoding Type:  One-Hot
 +---------------------+---------------------+--------------------+-------------------+---------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                       ;
++-----------------------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                                       ; Reason for Removal ;
++-----------------------------------------------------------------------------------------------------+--------------------+
+; clock_divider:inst5|lpm_counter:LPM_COUNTER_component|cntr_54h:auto_generated|counter_reg_bit[0..8] ; Lost fanout        ;
+; Total Number of Removed Registers = 9                                                               ;                    ;
++-----------------------------------------------------------------------------------------------------+--------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
@@ -246,12 +270,39 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_divider:inst5|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+-------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                        ;
++------------------------+-------------+-------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                              ;
+; LPM_WIDTH              ; 9           ; Signed Integer                                              ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                     ;
+; LPM_MODULUS            ; 0           ; Untyped                                                     ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                     ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                     ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                     ;
+; DEVICE_FAMILY          ; MAX 10      ; Untyped                                                     ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                     ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                          ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                          ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                     ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                     ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                     ;
+; CBXI_PARAMETER         ; cntr_54h    ; Untyped                                                     ;
++------------------------+-------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 10                          ;
+; boundary_port         ; 11                          ;
 ; cycloneiii_ff         ; 4                           ;
 ;     plain             ; 4                           ;
 ; cycloneiii_lcell_comb ; 14                          ;
@@ -281,7 +332,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue May 12 02:10:51 2026
+    Info: Processing started: Tue May 12 02:18:41 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off robot_line_follower_fsm -c robot_line_follower_fsm
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -292,17 +343,34 @@ Info (12021): Found 2 design units, including 1 entities, in source file robot_l
     Info (12023): Found entity 1: robot_line_follower_fsmV1 File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/robot_line_follower_fsmV1.vhd Line: 21
 Info (12127): Elaborating entity "block_diagram_V1" for the top level hierarchy
 Info (12128): Elaborating entity "robot_line_follower_fsmV1" for hierarchy "robot_line_follower_fsmV1:inst"
+Warning (12125): Using design file clock_divider.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: clock_divider-SYN File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/clock_divider.vhd Line: 51
+    Info (12023): Found entity 1: clock_divider File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/clock_divider.vhd Line: 42
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:inst5"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "clock_divider:inst5|lpm_counter:LPM_COUNTER_component" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/clock_divider.vhd Line: 73
+Info (12130): Elaborated megafunction instantiation "clock_divider:inst5|lpm_counter:LPM_COUNTER_component" File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/clock_divider.vhd Line: 73
+Info (12133): Instantiated megafunction "clock_divider:inst5|lpm_counter:LPM_COUNTER_component" with the following parameter: File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/clock_divider.vhd Line: 73
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "9"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_54h.tdf
+    Info (12023): Found entity 1: cntr_54h File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/db/cntr_54h.tdf Line: 25
+Info (12128): Elaborating entity "cntr_54h" for hierarchy "clock_divider:inst5|lpm_counter:LPM_COUNTER_component|cntr_54h:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 258
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 22 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "MAX10_CLK1_50"
+Info (21057): Implemented 23 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
     Info (21059): Implemented 6 output pins
     Info (21061): Implemented 12 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4773 megabytes
-    Info: Processing ended: Tue May 12 02:11:21 2026
-    Info: Elapsed time: 00:00:30
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4806 megabytes
+    Info: Processing ended: Tue May 12 02:19:13 2026
+    Info: Elapsed time: 00:00:32
     Info: Total CPU time (on all processors): 00:00:45
 
 
