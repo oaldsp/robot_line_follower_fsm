@@ -1,17 +1,17 @@
-Fitter Status : Successful - Tue May 12 04:49:57 2026
+Fitter Status : Successful - Tue May 12 20:14:40 2026
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : robot_line_follower_fsm
-Top-level Entity Name : block_diagram_V1
+Top-level Entity Name : block_diagram_V2
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 13 / 49,760 ( < 1 % )
-    Total combinational functions : 13 / 49,760 ( < 1 % )
-    Dedicated logic registers : 4 / 49,760 ( < 1 % )
-Total registers : 4
+Total logic elements : 30 / 49,760 ( < 1 % )
+    Total combinational functions : 30 / 49,760 ( < 1 % )
+    Dedicated logic registers : 10 / 49,760 ( < 1 % )
+Total registers : 10
 Total pins : 35 / 360 ( 10 % )
 Total virtual pins : 0
-Total memory bits : 96 / 1,677,312 ( < 1 % )
+Total memory bits : 128 / 1,677,312 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )
 UFM blocks : 0 / 1 ( 0 % )

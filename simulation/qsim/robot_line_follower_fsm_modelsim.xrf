@@ -1,10 +1,13 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/block_diagram_V1.bdf
+source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/robot_line_follower_fsmV2.vhd
 source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/robot_line_follower_fsmV1.vhd
+source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/block_diagram_V2.bdf
+source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/block_diagram_V1.bdf
 source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/robot_line_follower_fsmV2.smf
 source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/robot_line_follower_fsmV1.smf
 source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/display7_decoder.qip
 source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/display7_decoder.vhd
+source_file = 1, C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/Waveform.vwf
 source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_b.vhd

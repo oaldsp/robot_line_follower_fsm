@@ -25,7 +25,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Tue May 12 03:37:13 2026
+    Info: Processing started: Tue May 12 19:52:14 2026
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off robot_line_follower_fsm -c robot_line_follower_fsm --vector_source=C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/Waveform.vwf --testbench_file=C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/simulation/qsim/Waveform.vwf.vht
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Default -section_id Top was ignored
@@ -77,7 +77,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Tue May 12 03:37:16 2026
+    Info: Processing started: Tue May 12 19:52:17 2026
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/simulation/qsim/ robot_line_follower_fsm -c robot_line_follower_fsm
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Default -section_id Top was ignored
@@ -111,8 +111,8 @@ Warning (15400): WYSIWYG primitive "display7_decoder:inst3|altsyncram:altsyncram
 Warning (15400): WYSIWYG primitive "display7_decoder:inst1|altsyncram:altsyncram_component|altsyncram_96s3:auto_generated|ram_block1a0" has a port clk0 that is stuck at VCC File: C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/db/altsyncram_96s3.tdf Line: 31
 Info (204019): Generated file robot_line_follower_fsm.vho in folder "C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4647 megabytes
-    Info: Processing ended: Tue May 12 03:37:18 2026
+    Info: Peak virtual memory: 4643 megabytes
+    Info: Processing ended: Tue May 12 19:52:19 2026
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
@@ -130,15 +130,16 @@ c:/intelfpga_lite/18.1/modelsim_ase/win32aloem//vsim -c -do robot_line_follower_
 
 Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 
+
 # 10.5b
 
 
 # do robot_line_follower_fsm.do
+# ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 03:37:23 on May 12,2026
+# Start time: 19:52:23 on May 12,2026
 # vcom -work work robot_line_follower_fsm.vho 
-
 # -- Loading package STANDARD
 
 # -- Loading package TEXTIO
@@ -154,22 +155,23 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package altera_primitives_components
 # -- Compiling entity block_diagram_V1
 # -- Compiling architecture structure of block_diagram_V1
-# End time: 03:37:24 on May 12,2026, Elapsed time: 0:00:01
+# End time: 19:52:24 on May 12,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 03:37:24 on May 12,2026
+# Start time: 19:52:24 on May 12,2026
 # vcom -work work Waveform.vwf.vht 
+
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity block_diagram_V1_vhd_vec_tst
 # -- Compiling architecture block_diagram_V1_arch of block_diagram_V1_vhd_vec_tst
-# End time: 03:37:24 on May 12,2026, Elapsed time: 0:00:00
+# End time: 19:52:24 on May 12,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.block_diagram_V1_vhd_vec_tst 
-# Start time: 03:37:24 on May 12,2026
+# Start time: 19:52:24 on May 12,2026
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -193,9 +195,9 @@ Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
 # Loading fiftyfivenm.fiftyfivenm_ram_pulse_generator(pgen_arch)
 # Loading fiftyfivenm.fiftyfivenm_unvm(behavior)
 # Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)
-# after#33
+# after#35
 
-# End time: 03:37:25 on May 12,2026, Elapsed time: 0:00:01
+# End time: 19:52:25 on May 12,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -208,7 +210,7 @@ Reading C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fs
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/simulation/qsim/robot_line_follower_fsm_20260512033726.sim.vwf
+Writing the resulting VWF to C:/Users/otavi/OneDrive/Documentos/Reconfiguravel/robot_line_follower_fsm/simulation/qsim/robot_line_follower_fsm_20260512195226.sim.vwf
 
 Finished VCD to VWF conversion.
 

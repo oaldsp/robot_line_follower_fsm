@@ -1,5 +1,5 @@
 Flow report for robot_line_follower_fsm
-Tue May 12 04:50:17 2026
+Tue May 12 20:14:57 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue May 12 04:50:08 2026       ;
+; Flow Status                        ; Successful - Tue May 12 20:14:49 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; robot_line_follower_fsm                     ;
-; Top-level Entity Name              ; block_diagram_V1                            ;
+; Top-level Entity Name              ; block_diagram_V2                            ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 13 / 49,760 ( < 1 % )                       ;
-;     Total combinational functions  ; 13 / 49,760 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 4 / 49,760 ( < 1 % )                        ;
-; Total registers                    ; 4                                           ;
+; Total logic elements               ; 30 / 49,760 ( < 1 % )                       ;
+;     Total combinational functions  ; 30 / 49,760 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 10 / 49,760 ( < 1 % )                       ;
+; Total registers                    ; 10                                          ;
 ; Total pins                         ; 35 / 360 ( 10 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 96 / 1,677,312 ( < 1 % )                    ;
+; Total memory bits                  ; 128 / 1,677,312 ( < 1 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+-------------------------+
 ; Option            ; Setting                 ;
 +-------------------+-------------------------+
-; Start date & time ; 05/12/2026 04:48:56     ;
+; Start date & time ; 05/12/2026 20:13:37     ;
 ; Main task         ; Compilation             ;
 ; Revision Name     ; robot_line_follower_fsm ;
 +-------------------+-------------------------+
@@ -77,27 +77,35 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+-------------------------+-------------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value           ; Entity Name       ; Section Id ;
 +-------------------------------------+----------------------------------------+-------------------------+-------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 110073156466054.177857213508356        ; --                      ; --                ; --         ;
+; COMPILER_SIGNATURE_ID               ; 110073156466054.177862761605424        ; --                      ; --                ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                      ; --                ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                      ; --                ; --         ;
 ; MISC_FILE                           ; display7_decoder.bsf                   ; --                      ; --                ; --         ;
 ; MISC_FILE                           ; display7_decoder_inst.vhd              ; --                      ; --                ; --         ;
 ; MISC_FILE                           ; display7_decoder.inc                   ; --                      ; --                ; --         ;
 ; MISC_FILE                           ; display7_decoder.cmp                   ; --                      ; --                ; --         ;
+; MISC_FILE                           ; searchTimeoutCounter.bsf               ; --                      ; --                ; --         ;
+; MISC_FILE                           ; searchTimeoutCounter_inst.vhd          ; --                      ; --                ; --         ;
+; MISC_FILE                           ; searchTimeoutCounter.inc               ; --                      ; --                ; --         ;
+; MISC_FILE                           ; searchTimeoutCounter.cmp               ; --                      ; --                ; --         ;
+; MISC_FILE                           ; timeoutComparator.bsf                  ; --                      ; --                ; --         ;
+; MISC_FILE                           ; timeoutComparator_inst.vhd             ; --                      ; --                ; --         ;
+; MISC_FILE                           ; timeoutComparator.inc                  ; --                      ; --                ; --         ;
+; MISC_FILE                           ; timeoutComparator.cmp                  ; --                      ; --                ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --                      ; --                ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --                      ; --                ; --         ;
 ; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --                      ; --                ; --         ;
 ; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --                      ; --                ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                      ; DE10_LITE_Default ; Top        ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                      ; block_diagram_V1  ; Top        ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                      ; block_diagram_V2  ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                      ; DE10_LITE_Default ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                      ; block_diagram_V1  ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                      ; block_diagram_V2  ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                      ; DE10_LITE_Default ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                      ; block_diagram_V1  ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                      ; block_diagram_V2  ; Top        ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --                      ; --                ; --         ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --                      ; --                ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                      ; --                ; --         ;
-; TOP_LEVEL_ENTITY                    ; block_diagram_V1                       ; robot_line_follower_fsm ; --                ; --         ;
+; TOP_LEVEL_ENTITY                    ; block_diagram_V2                       ; robot_line_follower_fsm ; --                ; --         ;
 +-------------------------------------+----------------------------------------+-------------------------+-------------------+------------+
 
 
@@ -106,11 +114,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 4815 MB             ; 00:00:48                           ;
-; Fitter               ; 00:00:25     ; 1.0                     ; 5374 MB             ; 00:00:26                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4678 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.0                     ; 4782 MB             ; 00:00:06                           ;
-; Total                ; 00:01:16     ; --                      ; --                  ; 00:01:27                           ;
+; Analysis & Synthesis ; 00:00:36     ; 1.0                     ; 4816 MB             ; 00:00:47                           ;
+; Fitter               ; 00:00:27     ; 1.0                     ; 5340 MB             ; 00:00:28                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4678 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.0                     ; 4788 MB             ; 00:00:06                           ;
+; Total                ; 00:01:17     ; --                      ; --                  ; 00:01:28                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

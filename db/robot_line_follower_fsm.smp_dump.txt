@@ -1,7 +1,9 @@
 
-State Machine - |block_diagram_V1|robot_line_follower_fsmV1:inst|fstate
-Name fstate.turningRight fstate.turningLeft fstate.stationary fstate.straightLine 
-fstate.straightLine 0 0 0 0 
-fstate.stationary 0 0 1 1 
-fstate.turningLeft 0 1 0 1 
-fstate.turningRight 1 0 0 1 
+State Machine - |block_diagram_V2|robot_line_follower_fsmV2:inst|fstate
+Name fstate.searchRight fstate.searchLeft fstate.turningRight fstate.turningLeft fstate.stationary fstate.straightLine 
+fstate.straightLine 0 0 0 0 0 0 
+fstate.stationary 0 0 0 0 1 1 
+fstate.turningLeft 0 0 0 1 0 1 
+fstate.turningRight 0 0 1 0 0 1 
+fstate.searchLeft 0 1 0 0 0 1 
+fstate.searchRight 1 0 0 0 0 1 

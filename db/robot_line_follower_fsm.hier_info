@@ -1,4 +1,4 @@
-|block_diagram_V1
+|block_diagram_V2
 HEX0[0] <= display7_decoder:inst2.q[0]
 HEX0[1] <= display7_decoder:inst2.q[1]
 HEX0[2] <= display7_decoder:inst2.q[2]
@@ -7,12 +7,15 @@ HEX0[4] <= display7_decoder:inst2.q[4]
 HEX0[5] <= display7_decoder:inst2.q[5]
 HEX0[6] <= display7_decoder:inst2.q[6]
 HEX0[7] <= display7_decoder:inst2.q[7]
-rightMotor[0] <= robot_line_follower_fsmV1:inst.rightMotorBit0
-rightMotor[1] <= robot_line_follower_fsmV1:inst.rightMotorBit1
-reset => robot_line_follower_fsmV1:inst.reset
-clock => robot_line_follower_fsmV1:inst.clock
-leftSensor => robot_line_follower_fsmV1:inst.leftSensor
-rightSensor => robot_line_follower_fsmV1:inst.rightSensor
+rightMotor[0] <= robot_line_follower_fsmV2:inst.rightMotorBit0
+rightMotor[1] <= robot_line_follower_fsmV2:inst.rightMotorBit1
+reset => robot_line_follower_fsmV2:inst.reset
+clock => robot_line_follower_fsmV2:inst.clock
+clock => searchTimeoutCounter:inst8.clock
+leftSensor => robot_line_follower_fsmV2:inst.leftSensor
+leftSensor => inst10.IN1
+rightSensor => robot_line_follower_fsmV2:inst.rightSensor
+rightSensor => inst10.IN0
 HEX1[0] <= display7_decoder:inst3.q[0]
 HEX1[1] <= display7_decoder:inst3.q[1]
 HEX1[2] <= display7_decoder:inst3.q[2]
@@ -21,8 +24,8 @@ HEX1[4] <= display7_decoder:inst3.q[4]
 HEX1[5] <= display7_decoder:inst3.q[5]
 HEX1[6] <= display7_decoder:inst3.q[6]
 HEX1[7] <= display7_decoder:inst3.q[7]
-state[0] <= robot_line_follower_fsmV1:inst.stateBit0
-state[1] <= robot_line_follower_fsmV1:inst.stateBit1
+state[0] <= robot_line_follower_fsmV2:inst.stateBit0
+state[1] <= robot_line_follower_fsmV2:inst.stateBit1
 HEX2[0] <= display7_decoder:inst1.q[0]
 HEX2[1] <= display7_decoder:inst1.q[1]
 HEX2[2] <= display7_decoder:inst1.q[2]
@@ -31,12 +34,12 @@ HEX2[4] <= display7_decoder:inst1.q[4]
 HEX2[5] <= display7_decoder:inst1.q[5]
 HEX2[6] <= display7_decoder:inst1.q[6]
 HEX2[7] <= display7_decoder:inst1.q[7]
-leftMotor[0] <= robot_line_follower_fsmV1:inst.leftMotorBit0
-leftMotor[1] <= robot_line_follower_fsmV1:inst.leftMotorBit1
+leftMotor[0] <= robot_line_follower_fsmV2:inst.leftMotorBit0
+leftMotor[1] <= robot_line_follower_fsmV2:inst.leftMotorBit1
 MAX10_CLK1_50 => clock_divider:inst5.clock
 
 
-|block_diagram_V1|display7_decoder:inst2
+|block_diagram_V2|display7_decoder:inst2
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -52,7 +55,7 @@ q[6] <= altsyncram:altsyncram_component.q_a[6]
 q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|block_diagram_V1|display7_decoder:inst2|altsyncram:altsyncram_component
+|block_diagram_V2|display7_decoder:inst2|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -97,7 +100,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|block_diagram_V1|display7_decoder:inst2|altsyncram:altsyncram_component|altsyncram_96s3:auto_generated
+|block_diagram_V2|display7_decoder:inst2|altsyncram:altsyncram_component|altsyncram_96s3:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -148,35 +151,146 @@ q_a[6] <= ram_block1a6.PORTADATAOUT
 q_a[7] <= ram_block1a7.PORTADATAOUT
 
 
-|block_diagram_V1|robot_line_follower_fsmV1:inst
+|block_diagram_V2|robot_line_follower_fsmV2:inst
 reset => reg_fstate.stationary.OUTPUTSELECT
 reset => reg_fstate.straightLine.OUTPUTSELECT
 reset => reg_fstate.turningLeft.OUTPUTSELECT
 reset => reg_fstate.turningRight.OUTPUTSELECT
+reset => reg_fstate.searchLeft.OUTPUTSELECT
+reset => reg_fstate.searchRight.OUTPUTSELECT
 reset => leftMotorBit0.OUTPUTSELECT
 reset => leftMotorBit1.OUTPUTSELECT
 reset => rightMotorBit0.OUTPUTSELECT
 reset => rightMotorBit1.OUTPUTSELECT
 reset => stateBit0.OUTPUTSELECT
 reset => stateBit1.OUTPUTSELECT
+reset => stateBit2.OUTPUTSELECT
 clock => fstate~1.DATAIN
 leftSensor => process_1.IN0
 leftSensor => process_1.IN0
 leftSensor => process_1.IN0
 leftSensor => process_1.IN0
+leftSensor => process_1.IN0
 rightSensor => process_1.IN1
 rightSensor => process_1.IN1
 rightSensor => process_1.IN1
 rightSensor => process_1.IN1
+rightSensor => process_1.IN1
+searchTimeout => process_1.IN1
 leftMotorBit0 <= leftMotorBit0.DB_MAX_OUTPUT_PORT_TYPE
 leftMotorBit1 <= leftMotorBit1.DB_MAX_OUTPUT_PORT_TYPE
 rightMotorBit0 <= rightMotorBit0.DB_MAX_OUTPUT_PORT_TYPE
 rightMotorBit1 <= rightMotorBit1.DB_MAX_OUTPUT_PORT_TYPE
 stateBit0 <= stateBit0.DB_MAX_OUTPUT_PORT_TYPE
 stateBit1 <= stateBit1.DB_MAX_OUTPUT_PORT_TYPE
+stateBit2 <= stateBit2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|block_diagram_V1|display7_decoder:inst3
+|block_diagram_V2|timeoutComparator:inst9
+dataa[0] => lpm_compare:LPM_COMPARE_component.dataa[0]
+dataa[1] => lpm_compare:LPM_COMPARE_component.dataa[1]
+dataa[2] => lpm_compare:LPM_COMPARE_component.dataa[2]
+dataa[3] => lpm_compare:LPM_COMPARE_component.dataa[3]
+aeb <= lpm_compare:LPM_COMPARE_component.aeb
+
+
+|block_diagram_V2|timeoutComparator:inst9|lpm_compare:LPM_COMPARE_component
+dataa[0] => cmpr_omi:auto_generated.dataa[0]
+dataa[1] => cmpr_omi:auto_generated.dataa[1]
+dataa[2] => cmpr_omi:auto_generated.dataa[2]
+dataa[3] => cmpr_omi:auto_generated.dataa[3]
+datab[0] => cmpr_omi:auto_generated.datab[0]
+datab[1] => cmpr_omi:auto_generated.datab[1]
+datab[2] => cmpr_omi:auto_generated.datab[2]
+datab[3] => cmpr_omi:auto_generated.datab[3]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+alb <= <GND>
+aeb <= cmpr_omi:auto_generated.aeb
+agb <= <GND>
+aleb <= <GND>
+aneb <= <GND>
+ageb <= <GND>
+
+
+|block_diagram_V2|timeoutComparator:inst9|lpm_compare:LPM_COMPARE_component|cmpr_omi:auto_generated
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+
+
+|block_diagram_V2|searchTimeoutCounter:inst8
+clock => lpm_counter:LPM_COUNTER_component.clock
+sclr => lpm_counter:LPM_COUNTER_component.sclr
+q[0] <= lpm_counter:LPM_COUNTER_component.q[0]
+q[1] <= lpm_counter:LPM_COUNTER_component.q[1]
+q[2] <= lpm_counter:LPM_COUNTER_component.q[2]
+q[3] <= lpm_counter:LPM_COUNTER_component.q[3]
+
+
+|block_diagram_V2|searchTimeoutCounter:inst8|lpm_counter:LPM_COUNTER_component
+clock => cntr_kih:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => cntr_kih:auto_generated.sclr
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_kih:auto_generated.q[0]
+q[1] <= cntr_kih:auto_generated.q[1]
+q[2] <= cntr_kih:auto_generated.q[2]
+q[3] <= cntr_kih:auto_generated.q[3]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|block_diagram_V2|searchTimeoutCounter:inst8|lpm_counter:LPM_COUNTER_component|cntr_kih:auto_generated
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+sclr => _.IN0
+sclr => _.IN0
+sclr => _.IN0
+
+
+|block_diagram_V2|display7_decoder:inst3
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -192,7 +306,7 @@ q[6] <= altsyncram:altsyncram_component.q_a[6]
 q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|block_diagram_V1|display7_decoder:inst3|altsyncram:altsyncram_component
+|block_diagram_V2|display7_decoder:inst3|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -237,7 +351,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|block_diagram_V1|display7_decoder:inst3|altsyncram:altsyncram_component|altsyncram_96s3:auto_generated
+|block_diagram_V2|display7_decoder:inst3|altsyncram:altsyncram_component|altsyncram_96s3:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -288,7 +402,7 @@ q_a[6] <= ram_block1a6.PORTADATAOUT
 q_a[7] <= ram_block1a7.PORTADATAOUT
 
 
-|block_diagram_V1|display7_decoder:inst1
+|block_diagram_V2|display7_decoder:inst1
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -304,7 +418,7 @@ q[6] <= altsyncram:altsyncram_component.q_a[6]
 q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|block_diagram_V1|display7_decoder:inst1|altsyncram:altsyncram_component
+|block_diagram_V2|display7_decoder:inst1|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -349,7 +463,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|block_diagram_V1|display7_decoder:inst1|altsyncram:altsyncram_component|altsyncram_96s3:auto_generated
+|block_diagram_V2|display7_decoder:inst1|altsyncram:altsyncram_component|altsyncram_96s3:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -400,7 +514,7 @@ q_a[6] <= ram_block1a6.PORTADATAOUT
 q_a[7] <= ram_block1a7.PORTADATAOUT
 
 
-|block_diagram_V1|clock_divider:inst5
+|block_diagram_V2|clock_divider:inst5
 clock => lpm_counter:LPM_COUNTER_component.clock
 q[0] <= lpm_counter:LPM_COUNTER_component.q[0]
 q[1] <= lpm_counter:LPM_COUNTER_component.q[1]
@@ -413,7 +527,7 @@ q[7] <= lpm_counter:LPM_COUNTER_component.q[7]
 q[8] <= lpm_counter:LPM_COUNTER_component.q[8]
 
 
-|block_diagram_V1|clock_divider:inst5|lpm_counter:LPM_COUNTER_component
+|block_diagram_V2|clock_divider:inst5|lpm_counter:LPM_COUNTER_component
 clock => cntr_54h:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
@@ -464,7 +578,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|block_diagram_V1|clock_divider:inst5|lpm_counter:LPM_COUNTER_component|cntr_54h:auto_generated
+|block_diagram_V2|clock_divider:inst5|lpm_counter:LPM_COUNTER_component|cntr_54h:auto_generated
 clock => counter_reg_bit[8].CLK
 clock => counter_reg_bit[7].CLK
 clock => counter_reg_bit[6].CLK

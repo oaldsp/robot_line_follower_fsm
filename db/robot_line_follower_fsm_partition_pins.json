@@ -128,11 +128,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "rightSensor",
+					"name" : "leftSensor",
 					"strict" : false
 				},
 				{
-					"name" : "leftSensor",
+					"name" : "rightSensor",
 					"strict" : false
 				},
 				{
