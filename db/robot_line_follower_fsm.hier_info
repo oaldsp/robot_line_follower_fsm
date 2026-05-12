@@ -1,0 +1,41 @@
+|block_diagram_V1
+leftMotor[0] <= robot_line_follower_fsmV1:inst.leftMotorBit0
+leftMotor[1] <= robot_line_follower_fsmV1:inst.leftMotorBit1
+reset => robot_line_follower_fsmV1:inst.reset
+clock => robot_line_follower_fsmV1:inst.clock
+leftSensor => robot_line_follower_fsmV1:inst.leftSensor
+rightSensor => robot_line_follower_fsmV1:inst.rightSensor
+rightMotor[0] <= robot_line_follower_fsmV1:inst.rightMotorBit0
+rightMotor[1] <= robot_line_follower_fsmV1:inst.rightMotorBit1
+state[0] <= robot_line_follower_fsmV1:inst.stateBit0
+state[1] <= robot_line_follower_fsmV1:inst.stateBit1
+
+
+|block_diagram_V1|robot_line_follower_fsmV1:inst
+reset => reg_fstate.stationary.OUTPUTSELECT
+reset => reg_fstate.straightLine.OUTPUTSELECT
+reset => reg_fstate.turningLeft.OUTPUTSELECT
+reset => reg_fstate.turningRight.OUTPUTSELECT
+reset => leftMotorBit0.OUTPUTSELECT
+reset => leftMotorBit1.OUTPUTSELECT
+reset => rightMotorBit0.OUTPUTSELECT
+reset => rightMotorBit1.OUTPUTSELECT
+reset => stateBit0.OUTPUTSELECT
+reset => stateBit1.OUTPUTSELECT
+clock => fstate~1.DATAIN
+leftSensor => process_1.IN0
+leftSensor => process_1.IN0
+leftSensor => process_1.IN0
+leftSensor => process_1.IN0
+rightSensor => process_1.IN1
+rightSensor => process_1.IN1
+rightSensor => process_1.IN1
+rightSensor => process_1.IN1
+leftMotorBit0 <= leftMotorBit0.DB_MAX_OUTPUT_PORT_TYPE
+leftMotorBit1 <= leftMotorBit1.DB_MAX_OUTPUT_PORT_TYPE
+rightMotorBit0 <= rightMotorBit0.DB_MAX_OUTPUT_PORT_TYPE
+rightMotorBit1 <= rightMotorBit1.DB_MAX_OUTPUT_PORT_TYPE
+stateBit0 <= stateBit0.DB_MAX_OUTPUT_PORT_TYPE
+stateBit1 <= stateBit1.DB_MAX_OUTPUT_PORT_TYPE
+
+

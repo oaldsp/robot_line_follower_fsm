@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "leftMotor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leftMotor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rightMotor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rightMotor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "state[1]",
+					"strict" : false
+				},
+				{
+					"name" : "state[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "leftSensor",
+					"strict" : false
+				},
+				{
+					"name" : "rightSensor",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
