@@ -118,22 +118,6 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 568 216 744 232)
-	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "state[1..0]" (rect 90 0 137 17)(font "Intel Clear" ))
-	(pt 0 8)
-	(drawing
-		(line (pt 0 8)(pt 52 8))
-		(line (pt 52 4)(pt 78 4))
-		(line (pt 52 12)(pt 78 12))
-		(line (pt 52 12)(pt 52 4))
-		(line (pt 78 4)(pt 82 8))
-		(line (pt 82 8)(pt 78 12))
-		(line (pt 78 12)(pt 82 8))
-	)
-)
-(pin
-	(output)
 	(rect 568 184 744 200)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "rightMotor[1..0]" (rect 90 0 163 17)(font "Intel Clear" ))
@@ -198,6 +182,22 @@ refer to the applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8))
 	)
 	(annotation_block (location)(rect 680 648 744 672))
+)
+(pin
+	(output)
+	(rect 568 216 744 232)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "state[2..0]" (rect 90 0 137 17)(font "Intel Clear" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
 )
 (symbol
 	(rect 224 -64 368 0)
@@ -920,12 +920,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "state[1..0]" (rect 504 200 551 217)(font "Intel Clear" ))
-	(pt 504 224)
-	(pt 568 224)
-	(bus)
-)
-(connector
 	(text "rightMotor[1..0]" (rect 504 168 577 185)(font "Intel Clear" ))
 	(pt 496 192)
 	(pt 568 192)
@@ -945,16 +939,6 @@ refer to the applicable agreement for further details.
 	(pt 368 72)
 	(pt 400 72)
 	(bus)
-)
-(connector
-	(text "searchTimeout" (rect 536 56 605 73)(font "Intel Clear" ))
-	(pt 528 80)
-	(pt 608 80)
-)
-(connector
-	(text "searchTimeout" (rect 120 216 189 233)(font "Intel Clear" ))
-	(pt 224 224)
-	(pt 192 224)
 )
 (connector
 	(pt 208 48)
@@ -993,6 +977,22 @@ refer to the applicable agreement for further details.
 	(text "rightSensor" (rect 128 200 181 217)(font "Intel Clear" ))
 	(pt 224 208)
 	(pt 192 208)
+)
+(connector
+	(text "state[2..0]" (rect 504 200 551 217)(font "Intel Clear" ))
+	(pt 504 224)
+	(pt 568 224)
+	(bus)
+)
+(connector
+	(text "searchTimeout" (rect 536 56 605 73)(font "Intel Clear" ))
+	(pt 528 80)
+	(pt 608 80)
+)
+(connector
+	(text "searchTimeout" (rect 120 216 189 233)(font "Intel Clear" ))
+	(pt 224 224)
+	(pt 192 224)
 )
 (junction (pt 112 640))
 (junction (pt 112 496))

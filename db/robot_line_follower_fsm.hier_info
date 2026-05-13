@@ -26,6 +26,7 @@ HEX1[6] <= display7_decoder:inst3.q[6]
 HEX1[7] <= display7_decoder:inst3.q[7]
 state[0] <= robot_line_follower_fsmV2:inst.stateBit0
 state[1] <= robot_line_follower_fsmV2:inst.stateBit1
+state[2] <= robot_line_follower_fsmV2:inst.stateBit2
 HEX2[0] <= display7_decoder:inst1.q[0]
 HEX2[1] <= display7_decoder:inst1.q[1]
 HEX2[2] <= display7_decoder:inst1.q[2]

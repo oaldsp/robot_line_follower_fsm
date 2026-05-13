@@ -18,9 +18,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "05/12/2026 19:52:16"
+-- Generated on "05/12/2026 21:34:39"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          block_diagram_V1
+-- Vhdl Test Bench(with test vectors) for design  :          teste
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -28,31 +28,23 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY block_diagram_V1_vhd_vec_tst IS
-END block_diagram_V1_vhd_vec_tst;
-ARCHITECTURE block_diagram_V1_arch OF block_diagram_V1_vhd_vec_tst IS
+ENTITY teste_vhd_vec_tst IS
+END teste_vhd_vec_tst;
+ARCHITECTURE teste_arch OF teste_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clock : STD_LOGIC;
-SIGNAL HEX0 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL HEX1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL HEX2 : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL leftMotor : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL leftSensor : STD_LOGIC;
-SIGNAL MAX10_CLK1_50 : STD_LOGIC;
 SIGNAL reset : STD_LOGIC;
 SIGNAL rightMotor : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL rightSensor : STD_LOGIC;
 SIGNAL state : STD_LOGIC_VECTOR(1 DOWNTO 0);
-COMPONENT block_diagram_V1
+COMPONENT teste
 	PORT (
 	clock : IN STD_LOGIC;
-	HEX0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	HEX1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	HEX2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	leftMotor : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	leftSensor : IN STD_LOGIC;
-	MAX10_CLK1_50 : IN STD_LOGIC;
 	reset : IN STD_LOGIC;
 	rightMotor : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	rightSensor : IN STD_LOGIC;
@@ -60,16 +52,12 @@ COMPONENT block_diagram_V1
 	);
 END COMPONENT;
 BEGIN
-	i1 : block_diagram_V1
+	i1 : teste
 	PORT MAP (
 -- list connections between master ports and signals
 	clock => clock,
-	HEX0 => HEX0,
-	HEX1 => HEX1,
-	HEX2 => HEX2,
 	leftMotor => leftMotor,
 	leftSensor => leftSensor,
-	MAX10_CLK1_50 => MAX10_CLK1_50,
 	reset => reset,
 	rightMotor => rightMotor,
 	rightSensor => rightSensor,
@@ -120,4 +108,4 @@ BEGIN
 	rightSensor <= '0';
 WAIT;
 END PROCESS t_prcs_rightSensor;
-END block_diagram_V1_arch;
+END teste_arch;
